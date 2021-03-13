@@ -1,0 +1,29 @@
+{
+  "name": "auth-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PetitsPoissons/auth-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PetitsPoissons/auth-project/issues"
+  },
+  "homepage": "https://github.com/PetitsPoissons/auth-project#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.0.1",
+    "joi": "^17.4.0",
+    "mongoose": "^5.12.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7"
+  }
+}
