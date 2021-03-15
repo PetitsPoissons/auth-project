@@ -21,26 +21,27 @@ module.exports = {
     const { email, password } = req.value.body;
 
     // check if a user with that email already exists in the database
-    const foundUser = await User.findOne({ email: email });
+    const foundUser = await User.findOne({ email });
     if (foundUser) {
       return res.status(403).send({ error: 'Email is already in use' });
     }
 
     // create a new user
     const newUser = new User({
-      email: email,
-      password: password,
+      email,
+      password,
     });
     await newUser.save();
 
     // respond with a token
     const token = signToken(newUser);
-    res.status(200).json({ token: token });
+    res.status(200).json({ token });
   },
 
   signIn: async (req, res, next) => {
     // generate a token
-    console.log('UsersController.signIn() called');
+    const token = signToken(req.user);
+    res.status(200).json({ token });
   },
 
   secret: async (req, res, next) => {
