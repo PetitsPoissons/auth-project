@@ -20,6 +20,13 @@ router
   );
 
 router
+  .route('/oauth/google')
+  .post(
+    passport.authenticate('googleToken', { session: false }),
+    UsersController.googleOAuth
+  );
+
+router
   .route('/secret')
   .get(
     passport.authenticate('jwt', { session: false }),
