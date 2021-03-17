@@ -27,6 +27,13 @@ router
   );
 
 router
+  .route('/oauth/facebook')
+  .post(
+    passport.authenticate('facebookToken', { session: false }),
+    UsersController.facebookOAuth
+  );
+
+router
   .route('/secret')
   .get(
     passport.authenticate('jwt', { session: false }),
